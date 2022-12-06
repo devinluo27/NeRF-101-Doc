@@ -95,12 +95,39 @@ NeRF-Pytorch requires as input RGB images from each camera view and their associ
 ```
 
 
+## Intended versions of all programs
 
+- As found in requirements.txt. Description of compatible cuda toolkit
+- Resources and guidance on matching versions for intial run 
+- Include additional pytorch information for those who haven't used it before
+
+## Complete overview of BRICS/NeRF pipeline
+
+High level description of what each component does, inputs and outputs.
+
+Each section below will contain more detailed descriptions of these parts.
+
+## Run NeRF with example data
+
+- Step by step guide with tips on how to generate fern output
+- How to adjust parameters to get good output in a reasonable amount of time
+
+## Run COLMAP with example data
+
+- Links and description of colmap
+- Detailed account on its role in the pipeline, expected outputs
+- Colmap usage with NeRF
+- Theoretical description of individual components, such as poses_bounds, sparse, images_n, etc.
+
+## Collecting BRICS data
+
+Guide on usage, system, dos and don'ts, tips on how to get the best output.
 
 ## Run NeRF with BRICS Data
 Details on how to prepare the BRICS data for nerf and provide examples.
 
-
+- How to formulate BRICS images for colmap input
+- Generate NeRF model of collected data using above info
 
 ## Run NeRF on Brown CCV 
 Brown CCV is a campus-wide high performance computing cluster. All Brown member can apply for an exploratory account for free. Check out [here](https://ccv.brown.edu/rates) for your available resources. 
@@ -147,7 +174,8 @@ python run_nerf.py --config configs/<config-file>.txt
 
 ```
 
-
+## Troubleshooting/Common issues in each process
+Description of various user-error pitfalls encountered during the process by everyone
 
 ## Cylindrical/Corkscrew Path
 This is the code can be found in the `load_blender.py` file. 
