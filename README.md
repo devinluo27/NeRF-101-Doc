@@ -15,7 +15,8 @@ Here is the link to the original NeRF paper: [NeRF](https://arxiv.org/abs/2003.0
 ### What's NeRF?
 NeRF which stands for Neural Radiance Field is a fully connected neural network that can render novel and realistic views of complex 3D scenes from an input of a partial collection of 2D images of the same. The algorithm works by taking the partial set of 2D images and interpolating between them to render one complete 3D scene. The network is trained to map from a 5D coordinate system of viewing direction and spatial location to a 4D output of volume and opacity. NeRF is indeed a computationally intensive algorithm and hence there is a need to parallelize certain aspects of it using GPUs. In fact, one of the leaders of NeRF technology is Nvidia.
 
-For a more detailed introductory insight into the workings and various components of NeRF please refer to this [article](https://datagen.tech/guides/synthetic-data/neural-radiance-field-nerf/#:~:text=A%20neural%20radiance%20field%20(NeRF,input%20views%20of%20a%20scene.)
+For a more detailed introductory insight into the workings and various components of NeRF please refer to this 
+[article](https://datagen.tech/guides/synthetic-data/neural-radiance-field-nerf/#:~:text=A%20neural%20radiance%20field%20(NeRF,input%20views%20of%20a%20scene.)
 
 
 
