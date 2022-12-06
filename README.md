@@ -13,7 +13,11 @@ So we are all on the same page, could you send me a structure for this markdown 
 ## NeRF 101
 Here is the link to the original NeRF paper: [NeRF](https://arxiv.org/abs/2003.08934)
 ### What's NeRF?
-Brief Intro to NeRF here.   
+NeRF which stands for Neural Radiance Field is a fully connected neural network that can render novel and realistic views of complex 3D scenes from an input of a partial collection of 2D images of the same. The algorithm works by taking the partial set of 2D images and interpolating between them to render one complete 3D scene. The network is trained to map from a 5D coordinate system of viewing direction and spatial location to a 4D output of volume and opacity. NeRF is indeed a computationally intensive algorithm and hence there is a need to parallelize certain aspects of it using GPUs. In fact, one of the leaders of NeRF technology is Nvidia.
+
+For a more detailed introductory insight into the workings and various components of NeRF please refer to this article.
+![image](https://user-images.githubusercontent.com/78324747/206010783-d51249fd-5042-49f1-ad08-549369a189e9.png)
+
 
 This code is taken from the [nerf-pytorch repo](https://github.com/yenchenlin/nerf-pytorch). In order to run the code, you can reference the documentation in that repo. 
 
