@@ -1,8 +1,8 @@
 # NeRF-101-Doc
 
 
-In lieu of your final project, please take the NeRF 101 markdown and create a new markdown with a lot more details, including initial steps (read and summarize the NeRF paper, create CCV account, etc.) all the way to getting it to work on BRICS data. I expect this will be quite detailed --> the equivalent of 10 pages of so of a regular report since you are all collaborating.
-So we are all on the same page, could you send me a structure for this markdown file (just subsections) before next week's group meeting?
+<!-- In lieu of your final project, please take the NeRF 101 markdown and create a new markdown with a lot more details, including initial steps (read and summarize the NeRF paper, create CCV account, etc.) all the way to getting it to work on BRICS data. I expect this will be quite detailed: the equivalent of 10 pages of so of a regular report since you are all collaborating.
+So we are all on the same page, could you send me a structure for this markdown file (just subsections) before next week's group meeting? -->
 
 <!-- ## NeRF Paper
 ### Summary
@@ -10,57 +10,10 @@ So we are all on the same page, could you send me a structure for this markdown 
     
 
 
-
-
-## Brown Center for Computation & Visualization (CCV)
-Brown CCV is a campus-wide high performance computing cluster. All Brown member can apply for an exploratory account for free. Check out [here](https://ccv.brown.edu/rates) for your available resources. 
-
-
-### Create an Account on CCV
-1. Submit a request [here](https://brown.co1.qualtrics.com/jfe/form/SV_0GtBE8kWJpmeG4B). CCV staff will notify you via email after your account has been created (may take few days).
-2. One recommended way to connect to CCV is by Remote IDE. You can find the instruction [here](https://docs.ccv.brown.edu/oscar/connecting-to-oscar/remote-ide) as well as some other connection methods.
-
-### Submitting job on CCV
-Brown CCV uses Slurm to manage workload. A shell script is required for submitting jobs.
-
-```
-#!/bin/bash
-
-# Request an hour of runtime:
-#SBATCH --time=1:00:00
-
-# Default resources are 1 core with 2.8GB of memory.
-# Use more memory (4GB):
-#SBATCH --mem=4G
-
-# Specify a job name:
-#SBATCH -J nerf-101
-
-# Specify an output file
-# %j is a special variable that is replaced by the JobID when 
-# job starts
-#SBATCH -o MySerialJob-%j.out
-#SBATCH -e MySerialJob-%j.out
-
-# number of gpus to use
-#SBATCH -p gpu --gres=gpu:2
-
-# number of nodes to use
-#SBATCH -N 1
-
-# number of cpu cores to use
-#SBATCH -n 4
-
-# your command
-echo "nerf-101"
-python --version
-```
-
 ## NeRF 101
 Here is the link to the original NeRF paper: [NeRF](https://arxiv.org/abs/2003.08934)
 ### What's NeRF?
-Brief Intro or NeRF here.
-
+Brief Intro to NeRF here.   
 
 This code is taken from the [nerf-pytorch repo](https://github.com/yenchenlin/nerf-pytorch). In order to run the code, you can reference the documentation in that repo. 
 
@@ -72,6 +25,8 @@ NeRF-Pytorch can take in several different types of scenes as input (refer to th
 `python run_nerf.py --config configs/<config-file>.txt`
 
 ## Config File
+Inside <config_file>.txt, we define the file path, data type, training setting, etc.
+
 ### Location
 ```
 ├── configs
@@ -135,11 +90,57 @@ NeRF-Pytorch requires as input RGB images from each camera view and their associ
 ```
 
 
-## Run Nerf with BRICS Data
-Details on how to prepare the brics data for nerf and provide some 
+
+
+## Run NeRF with BRICS Data
+Details on how to prepare the BRICS data for nerf and provide examples.
 
 
 
+## Run NeRF on Brown CCV 
+Brown CCV is a campus-wide high performance computing cluster. All Brown member can apply for an exploratory account for free. Check out [here](https://ccv.brown.edu/rates) for your available resources. 
+
+
+### Create an Account on CCV
+1. Submit a request [here](https://brown.co1.qualtrics.com/jfe/form/SV_0GtBE8kWJpmeG4B). CCV staff will notify you via email after your account has been created (may take few days).
+2. One recommended way to connect to CCV is by Remote IDE. You can find the instruction [here](https://docs.ccv.brown.edu/oscar/connecting-to-oscar/remote-ide) as well as some other connection methods.
+
+### Submitting job on CCV
+Brown CCV uses Slurm to manage workload. A shell script is required for submitting jobs. Below is an example.
+
+```
+#!/bin/bash
+
+# Request an hour of runtime:
+#SBATCH --time=1:00:00
+
+# Default resources are 1 core with 2.8GB of memory.
+# Use more memory (4GB):
+#SBATCH --mem=4G
+
+# Specify a job name:
+#SBATCH -J nerf-101
+
+# Specify an output file
+# %j is a special variable that is replaced by the JobID when 
+# job starts
+#SBATCH -o MySerialJob-%j.out
+#SBATCH -e MySerialJob-%j.out
+
+# number of gpus to use
+#SBATCH -p gpu --gres=gpu:2
+
+# number of nodes to use
+#SBATCH -N 1
+
+# number of cpu cores to use
+#SBATCH -n 4
+
+# your command
+echo "nerf-101"
+python run_nerf.py --config configs/<config-file>.txt
+
+```
 
 
 
