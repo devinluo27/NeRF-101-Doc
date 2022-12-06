@@ -103,9 +103,9 @@ NeRF-Pytorch requires as input RGB images from each camera view and their associ
 
 ## Complete overview of BRICS/NeRF pipeline
 
-High level description of what each component does, inputs and outputs.
-
-Each section below will contain more detailed descriptions of these parts.
+- High level description of what each component does, inputs and outputs.
+- Each section below will contain more detailed descriptions of these parts.
+- Awesome diagram maybe?!?!?! Multiple diagrams o_o
 
 ## Run NeRF with example data
 
@@ -121,7 +121,8 @@ Each section below will contain more detailed descriptions of these parts.
 
 ## Collecting BRICS data
 
-Guide on usage, system, dos and don'ts, tips on how to get the best output.
+- Guide on usage, system, dos and don'ts, tips on how to get the best output.
+- Theoretical goals of BRICS! Fun features!
 
 ## Run NeRF with BRICS Data
 Details on how to prepare the BRICS data for nerf and provide examples.
@@ -131,7 +132,6 @@ Details on how to prepare the BRICS data for nerf and provide examples.
 
 ## Run NeRF on Brown CCV 
 Brown CCV is a campus-wide high performance computing cluster. All Brown member can apply for an exploratory account for free. Check out [here](https://ccv.brown.edu/rates) for your available resources. 
-
 
 ### Create an Account on CCV
 1. Submit a request [here](https://brown.co1.qualtrics.com/jfe/form/SV_0GtBE8kWJpmeG4B). CCV staff will notify you via email after your account has been created (may take few days).
