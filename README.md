@@ -24,7 +24,9 @@ For a more detailed introductory insight into the workings and various component
 
 
 ## About NeRF-Pytorch
-This code is taken from the [nerf-pytorch repo](https://github.com/yenchenlin/nerf-pytorch). In order to run the code, you can reference the documentation in that repo. 
+The repository linked below is a faithful PyTorch implementation of the above described NeRF paper that reproduces the results of the author's Tensorflow implementation while running 1.3 times faster. It has also been tested to match it numerically.
+
+This code is taken from the [nerf-pytorch repo](https://github.com/yenchenlin/nerf-pytorch). In order to run the code, you can reference the documentation in that repo and the breif desrciption below. 
 
 NeRF-Pytorch can take in several different types of scenes as input (refer to the different `load_{data type}.py` files in the repo). We only dealt with loading synthetic data. The synthetic data we used was created by Chandradeep in Blender.
 
