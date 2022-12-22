@@ -30,6 +30,9 @@ This code is taken from the [nerf-pytorch repo](https://github.com/yenchenlin/ne
 
 NeRF-Pytorch can take in several different types of scenes as input (refer to the different `load_{data type}.py` files in the repo). We only dealt with loading synthetic data. The synthetic data we used was created by Chandradeep in Blender.
 
+You can run the NeRF pytorch code to generate the neural field models using either a CUDA compatible GPU or on Brown's CCV's high performance computer Oscar. The steps to using Oscar are detailed below in this document.
+
+
 ## Batch Script Command
 `python run_nerf.py --config configs/<config-file>.txt`
 
