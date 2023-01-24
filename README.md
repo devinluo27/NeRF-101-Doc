@@ -201,6 +201,18 @@ If you are done setting all options for pose estimation, choose Extract and wait
 
 All extracted data will be stored in the database file and can be reviewed/managed in the database management tool.
 
+To install COLMAP use the following:
+
+`cd ~
+git clone --depth 1 -b 3.7 https://github.com/colmap/colmap
+cd colmap
+mkdir build
+cd build
+cmake ..
+make -j3  # updated to -j3 from -j as 26GB RAM is not enough
+sudo make install
+pip install opencv-python`
+
 You can find a video explaining the above [here](https://www.youtube.com/watch?v=s-RP4yiMqP4)
 
 ## Collecting BRICS data
