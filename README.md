@@ -139,6 +139,48 @@ After training for 200k iterations (~8 hours on a single 2080 Ti), you can find 
 
 ![](https://user-images.githubusercontent.com/7057863/78473081-58ea1600-7770-11ea-92ce-2bbf6a3f9add.gif)
 
+Apart from these, there are other models that we can work with in the repository.
+To play with other scenes presented in the paper, download the data [here](https://drive.google.com/drive/folders/128yBriW1IG_3NJ5Rp7APSTZsJqdJdfc1). Place the downloaded dataset according to the following directory structure:
+```
+├── configs                                                                                                       
+│   ├── ...                                                                                     
+│                                                                                               
+├── data                                                                                                                                                                                                       
+│   ├── nerf_llff_data                                                                                                  
+│   │   └── fern                                                                                                                             
+│   │   └── flower  # downloaded llff dataset                                                                                  
+│   │   └── horns   # downloaded llff dataset
+|   |   └── ...
+|   ├── nerf_synthetic
+|   |   └── lego
+|   |   └── ship    # downloaded synthetic dataset
+|   |   └── ...
+```
+
+---
+
+Once we have the data downloaded, to train NeRF on different datasets we run the following similar skeletal command: 
+
+```
+python run_nerf.py --config configs/{DATASET}.txt
+```
+
+replace `{DATASET}` with `trex` | `horns` | `flower` | `fortress` | `lego` | etc.
+
+---
+
+We can even test the NeRF models trained on different datasets by running the following command: 
+
+```
+python run_nerf.py --config configs/{DATASET}.txt --render_only
+```
+
+replace `{DATASET}` with `trex` | `horns` | `flower` | `fortress` | `lego` | etc.
+
+Now, these models, we created are from clean datasets obtained from the paper/repository. If you want to work with your own dataset for an object of your choosing, you can capture the data from the BRICS system and the information is presented in the sections below.
+
+
+
 ## Run COLMAP with example data
 
 - Links and description of colmap
