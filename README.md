@@ -117,6 +117,10 @@ NeRF-Pytorch requires as input RGB images from each camera view and their associ
 ## Run NeRF with example data
 This section is about how we can get the NeRF pytorch code to train on the datasets given in the repository. The repo has collated a number of example datasets which can be used to train models and the steps below detail how to do so.
 
+Before we get started on how to use COLMAP, we must first see what it is. COLMAP is a general-purpose Structure-from-Motion (SfM) and Multi-View Stereo (MVS) pipeline with a graphical and command-line interface. It offers a wide range of features for reconstruction of ordered and unordered image collections. 
+
+
+
 We start by downloading the datasets of the models we want to train. Lets us use the examples of lego and fern.
 ```
 bash download_example_data.sh
@@ -188,11 +192,7 @@ Some things that are helpful and should be kept in mind are:
 
 
 ## Run COLMAP with example data
-
-- Links and description of colmap
-- Detailed account on its role in the pipeline, expected outputs
-- Colmap usage with NeRF
-- Theoretical description of individual components, such as poses_bounds, sparse, images_n, etc.
+COLMAP is important for this document as it is used to calibrate the poses for the cameras in the BRICS system. It allows us to calculate from an input of images the intrinsics and extrinsic properties of the cameras rigged to the BRICS box. Once we find these values, we can then configure the NeRF models.
 
 ## Collecting BRICS data
 
