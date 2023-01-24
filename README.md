@@ -117,10 +117,6 @@ NeRF-Pytorch requires as input RGB images from each camera view and their associ
 ## Run NeRF with example data
 This section is about how we can get the NeRF pytorch code to train on the datasets given in the repository. The repo has collated a number of example datasets which can be used to train models and the steps below detail how to do so.
 
-Before we get started on how to use COLMAP, we must first see what it is. COLMAP is a general-purpose Structure-from-Motion (SfM) and Multi-View Stereo (MVS) pipeline with a graphical and command-line interface. It offers a wide range of features for reconstruction of ordered and unordered image collections. 
-
-
-
 We start by downloading the datasets of the models we want to train. Lets us use the examples of lego and fern.
 ```
 bash download_example_data.sh
@@ -193,6 +189,19 @@ Some things that are helpful and should be kept in mind are:
 
 ## Run COLMAP with example data
 COLMAP is important for this document as it is used to calibrate the poses for the cameras in the BRICS system. It allows us to calculate from an input of images the intrinsics and extrinsic properties of the cameras rigged to the BRICS box. Once we find these values, we can then configure the NeRF models.
+
+Before we get started on how to use COLMAP, we must first see what it is. COLMAP is a general-purpose Structure-from-Motion (SfM) and Multi-View Stereo (MVS) pipeline with a graphical and command-line interface. It offers a wide range of features for reconstruction of ordered and unordered image collections. 
+
+
+Here we are using COLMAP for feature detection/ extraction and how to do so is described below. Feature detection/extraction finds sparse feature points in the image and describes their appearance using a numerical descriptor. COLMAP imports images and performs feature detection/extraction in one step in order to only load images from disk once.
+
+Next, choose Processing > Extract features. In this dialog, you must first decide on the employed intrinsic camera model. You can either automatically extract focal length information from the embedded EXIF information or manually specify intrinsic parameters, e.g., as obtained in a lab calibration. If an image has partial EXIF information, COLMAP tries to find the missing camera specifications in a large database of camera models automatically. If all your images were captured by the same physical camera with identical zoom factor, it is recommended to share intrinsics between all images. Note that the program will exit ungracefully if the same camera model is shared among all images but not all images have the same size or EXIF focal length. If you have several groups of images that share the same intrinsic camera parameters, you can easily modify the camera models at a later point as well (see Database Management). If in doubt what to choose in this step, simply stick to the default parameters.
+
+If you are done setting all options for pose estimation, choose Extract and wait for the extraction to finish or cancel. If you cancel during the extraction process, the next time you start extracting images for the same project, COLMAP automatically continues where it left off. This also allows you to add images to an existing project/reconstruction. In this case, be sure to verify the camera parameters when using shared intrinsics.
+
+All extracted data will be stored in the database file and can be reviewed/managed in the database management tool.
+
+You can find a video explaining the above [here](https://www.youtube.com/watch?v=s-RP4yiMqP4)
 
 ## Collecting BRICS data
 
