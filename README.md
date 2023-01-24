@@ -221,6 +221,13 @@ To install COLMAP use the following:
 
 `pip install opencv-python`
 
+You can Launch COLMAP via the remote desktop using the command `colmap gui`. And after that you can follow these steps:
+1. Extract feature points of the images withProcessing > Feature extraction > Extract
+2. Match feature points with Processing > Feature matching > Run
+3. Estimate camera poses withReconstruction > Start reconstruction
+4. Save files with File > Export model as text. Select the colmap_text directory which is created while ago
+5. Terminate COLMAP
+
 
 You can find a video explaining the above [here](https://www.youtube.com/watch?v=s-RP4yiMqP4)
 
