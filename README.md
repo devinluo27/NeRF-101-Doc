@@ -115,9 +115,29 @@ NeRF-Pytorch requires as input RGB images from each camera view and their associ
 - Awesome diagram maybe?!?!?! Multiple diagrams o_o
 
 ## Run NeRF with example data
+This section is about how we can get the NeRF pytorch code to train on the datasets given in the repository. The repo has collated a number of example datasets which can be used to train models and the steps below detail how to do so.
 
-- Step by step guide with tips on how to generate fern output
-- How to adjust parameters to get good output in a reasonable amount of time
+We start by downloading the datasets of the models we want to train. Lets us use the examples of lego and fern.
+```
+bash download_example_data.sh
+```
+Now, to train a low-res `lego` NeRF we run the following command:
+```
+python run_nerf.py --config configs/lego.txt
+```
+After training for 100k iterations (~4 hours on a single 2080 Ti), you can find the following video at `logs/lego_test/lego_test_spiral_100000_rgb.mp4`.
+
+![](https://user-images.githubusercontent.com/7057863/78473103-9353b300-7770-11ea-98ed-6ba2d877b62c.gif)
+
+---
+
+Similarly, to train a low-res `fern` NeRF we run:
+```
+python run_nerf.py --config configs/fern.txt
+```
+After training for 200k iterations (~8 hours on a single 2080 Ti), you can find the following video at `logs/fern_test/fern_test_spiral_200000_rgb.mp4` and `logs/fern_test/fern_test_spiral_200000_disp.mp4`
+
+![](https://user-images.githubusercontent.com/7057863/78473081-58ea1600-7770-11ea-92ce-2bbf6a3f9add.gif)
 
 ## Run COLMAP with example data
 
