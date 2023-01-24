@@ -179,6 +179,12 @@ replace `{DATASET}` with `trex` | `horns` | `flower` | `fortress` | `lego` | etc
 
 Now, these models, we created are from clean datasets obtained from the paper/repository. If you want to work with your own dataset for an object of your choosing, you can capture the data from the BRICS system and the information is presented in the sections below.
 
+Some things that are helpful and should be kept in mind are:
+1. The original code output images and a video where the camera moves in a circular path around the object. For the synthetic data, there were images (and parts of the video) that were completely white. We believe that this occurs because camera goes outside the bounds of the box, so decreasing the radius the camera movement resolves this issues. 
+2. The code uses the Blender coordinate system rather than the OpenCV coordinate system.
+3. For synthetic data that is given in the repository, the near and far planes are hard-coded in the run_nerf.py file. The original near and far planes are set to 2 and 6 respectively. For data that you create like from BRICS or Chandradeep’s data, the near and far planes are 0.1 and 20 respectively. 
+
+
 
 
 ## Run COLMAP with example data
